@@ -1,0 +1,15 @@
+[package]
+name = "aycer_image"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.20", features = ["derive"] }
+colored = "2.1.0"
+gif = "0.13.1"
+image = "0.25.4"
+serde = { version = "1.0.210", features = ["derive"] }
+thiserror = "1.0.64"
+tinytemplate = "1.2.1"
+toml = "0.8.19"
+

@@ -1,0 +1,9 @@
+constexpr AnimatedImage {name} \{
+    .frame_count = {frame_count},
+    .frames = \{
+        {{ for frame in frames -}}
+        \{.pixels = \{{{ for pixel in frame.pixels }}{pixel}{{if not @last }}, {{ endif }}{{ endfor }}}}
+        {{- if not @last }}, {{ endif }}
+        {{ endfor }}
+    }
+};

@@ -1,0 +1,40 @@
+#include <FastLED.h>
+#include <string.h>
+
+#define SCREEN_WIDTH {width}
+#define SCREEN_HEIGHT {height}
+#define SCREEN_LED_COUNT SCREEN_WIDTH * SCREEN_HEIGHT
+#define SCREEN_DATA_PIN {data_pin}
+
+struct Image \{
+    CRGB pixels[SCREEN_LED_COUNT];
+};
+
+struct AnimatedImage \{
+    int frame_count;
+    Image frames[];
+};
+
+{{ for image in images }}
+{{ call image with image }}
+{{ endfor }}
+
+{{ for animated_image in animated_images }}
+{{ call animated_image with animated_image }}
+{{ endfor }}
+
+CRGB __buffer[SCREEN_LED_COUNT];
+
+void draw_image(const Image& image) \{
+    memcpy(__buffer, image.pixels, sizeof __buffer);
+    FastLED.show();
+}
+
+void draw_animated_image(const AnimatedImage& image, unsigned int frame) \{
+    unsigned int index = frame % image.frame_count;
+    draw_image(image.frames[index]);
+}
+
+void initialize() \{
+    FastLED.addLeds<NEOPIXEL, SCREEN_DATA_PIN>(__buffer, SCREEN_LED_COUNT);
+}

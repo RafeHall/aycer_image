@@ -1,0 +1,11 @@
+width = 16 # Specifiy LED matrix width
+height = 16 # Specify LED matrix height
+data_pin = 5 # Specify the data pin used for controller
+
+[images]
+# Specify a bmp, dds, farbfeld, hdr, ico, jpeg, exr, png, pnm, qoi, tga, tiff or webp to load an image
+hello_world = "images/hello_world.png"
+# Specify a gif to load it as an animated image
+shining_world = "images/shining_world.gif"
+# Specify a directory to load all images (ordered by name) as frames of an animated image
+dir_world = "images/dir_world"

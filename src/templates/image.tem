@@ -1,0 +1,3 @@
+constexpr Image {name} = \{
+    .pixels = \{{{ for pixel in pixels -}}{pixel}{{ if not @last }}, {{ endif }}{{ endfor }}}
+};
