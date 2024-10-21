@@ -13,3 +13,9 @@ thiserror = "1.0.64"
 tinytemplate = "1.2.1"
 toml = "0.8.19"
 
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+opt-level = "z"  # Optimize for size.
+lto = true # Link time optimizations
+codegen-units = 1
+panic = "abort"

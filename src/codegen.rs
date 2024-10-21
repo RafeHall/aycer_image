@@ -3,9 +3,9 @@ use tinytemplate::TinyTemplate;
 
 use crate::Error;
 
-static HEADER_TEMPLATE: &'static str = include_str!("templates/header.tem");
-static IMAGE_TEMPLATE: &'static str = include_str!("templates/image.tem");
-static ANIMATED_IMAGE_TEMPLATE: &'static str = include_str!("templates/animated_image.tem");
+static HEADER_TEMPLATE: &str = include_str!("templates/header.tem");
+static IMAGE_TEMPLATE: &str = include_str!("templates/image.tem");
+static ANIMATED_IMAGE_TEMPLATE: &str = include_str!("templates/animated_image.tem");
 
 
 #[derive(Serialize, Debug)]
